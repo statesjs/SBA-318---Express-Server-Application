@@ -14,7 +14,7 @@ function saveData(data) {
   fs.writeFileSync(dataPath, JSON.stringify(data, null, 2));
 }
 //add middleware
-const error = require("../middleware/error");
+const error = require("../utilities/error");
 
 // GET all resources
 router.get("/", (req, res) => {
@@ -24,7 +24,7 @@ router.get("/", (req, res) => {
 });
 
 // GET one resource by ID
-router.get("/:id", (req, res) => {
+router.get("/:id", (req, res, next) => {
   const data = getData();
   const found = data.find((item) => item.id == req.params.id);
 
@@ -34,7 +34,7 @@ router.get("/:id", (req, res) => {
   res.json(found);
 });
 // POST new resource
-router.post("/", (req, res) => {
+router.post("/", (req, res, next) => {
   const data = getData();
   const { title, body } = req.body;
   if (title && body) {

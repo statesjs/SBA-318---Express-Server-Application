@@ -1,12 +1,13 @@
-const Joi = require("joi");
 const express = require("express");
 const app = express();
-const fs = require("fs");
 const path = require("path");
-
+const PORT = process.env.PORT || 3000;
+// ejs view Engine
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 //import middleware
-const logger = require("./middleware/logger");
-const error = require("./middleware/errorHandler");
+const logger = require("./utilities/logger");
+const error = require("./utilities/error");
 
 //middleware that parses json objects
 app.use(express.json());
@@ -20,16 +21,14 @@ const resourceRoutes = require("./routes/resources");
 //applying routes
 app.use("/resources", resourceRoutes);
 
-// ejs view Engine
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
-
 //base url
 app.get("/", (req, res) => {
   res.send("You're live");
 });
 
-//error 500 middleware
+//error middleware
 app.use(error);
-const PORT = process.env.PORT || 3000;
-app.listen(PORT);
+
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});

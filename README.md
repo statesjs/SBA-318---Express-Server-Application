@@ -13,9 +13,9 @@ SBA318
 ├── routes/
 │   ├── resourceRoutes.js
 │   └── userRoutes.js
-├── middleware/
+├── utilities/
 │   ├── logger.js
-│   └── errorHandler.js
+│   └── error.js
 ├── data/
 │   ├── resources.json  # Simulate a database
 │   ├── users.json

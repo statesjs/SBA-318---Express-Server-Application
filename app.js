@@ -17,13 +17,13 @@ app.use(express.static(path.join(__dirname, "public"))); // static CSS/images
 
 // importing routes
 const resourceRoutes = require("./routes/resources");
-
+const usersRoutes = require("./routes/users");
 //applying routes
 app.use("/resources", resourceRoutes);
-
+app.use("/users", usersRoutes);
 //base url
 app.get("/", (req, res) => {
-  res.send("You're live");
+  res.render("index");
 });
 
 //error middleware

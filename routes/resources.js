@@ -36,8 +36,8 @@ router.get("/:id", (req, res, next) => {
 // POST new resource
 router.post("/", (req, res, next) => {
   const data = getData();
-  const { title, body } = req.body;
-  if (title && body) {
+  const { title, description } = req.body;
+  if (title && description) {
     const newResource = {
       id: data[data.length - 1].id + 1,
       ...req.body,

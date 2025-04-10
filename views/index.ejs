@@ -7,11 +7,101 @@
     <title>SBA318: DevLink</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <h1>Dev Link</h1>
+    <h1>SBA318 API Endpoint Guide</h1>
 
-    <script src="" async defer></script>
+    <section>
+      <h2>Users</h2>
+      <div class="method">GET</div>
+      <ul>
+        <li><code>/users</code> - Get all users</li>
+        <li><code>/users/:id</code> - Get a user by ID</li>
+      </ul>
+      <div class="method">POST</div>
+      <ul>
+        <li><code>/users</code> - Create a new user</li>
+        <li> Request body example:</li>
+        <li><code>{"username": "insert username",</br>
+           "email": "insert email"}</code></li>
+      </ul>
+      <div class="method">PATCH</div>
+      <ul>
+        <li><code>/users/:id</code> - Update a user by ID</li>
+        <li>Request body example: </li>
+        <li><code>{"username": "newUsername",</br>
+           "email": "newemail@example.com"}</code></li>
+      </ul>
+      <div class="method">DELETE</div>
+      <ul>
+        <li><code>/users/:id</code> - Delete a user</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Resources</h2>
+      <div class="method">GET</div>
+      <ul>
+        <li><code>/resources</code> - Get all resources</li>
+        <li><code>/resources/:id</code> - Get a resource by ID</li>
+        <li><code>/resources?authorId=1</code> - Filter resources by authorId</li>
+      </ul>
+      <div class="method">POST</div>
+      <ul>
+        <li><code>/resources</code> - Create a new resource</li>
+      
+        <li>Request body example:</li>
+        <li><code>{"title": "insert title",</br>
+           "description": "insert description"}</code> </li>
+      </ul>
+      <div class="method">PATCH</div>
+      <ul>
+        <li><code>/resources/:id</code> - Update a resource by ID</li>
+        <li>Request body example: </li>
+        <li><code>{
+         
+          "title": "New Title",</br>
+          "description": "New Description",
+          }</code></li>
+      </ul>
+      <div class="method">DELETE</div>
+      <ul>
+        <li><code>/resources/:id</code> - Delete a resource</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Comments</h2>
+      <div class="method">GET</div>
+      <ul>
+        <li><code>/comments</code> - Get all comments</li>
+        <li><code>/comments/:id</code> - Get a comment by ID</li>
+      </ul>
+      <div class="method">POST</div>
+      <ul>
+        <li><code>/comments</code> - Create a new comment</li>
+        <li>Request body example: </li>
+        <li><code>{
+          "resourceId": "Resource's ID",</br>
+          "userId": "User's ID",</br>
+          "content": "Some comment"
+          }</code></li>
+     
+      </ul>
+      <div class="method">PATCH</div>
+      <ul>
+        <li><code>/comments/:id</code> - Update a comment by ID</li>
+        <li>Request body example: </li>
+        <li><code>{
+          "resourceId": "new resource id", </br>
+          "content": "new comment here"
+          }</code></li>
+      </ul>
+      <div class="method">DELETE</div>
+      <ul>
+        <li><code>/comments/:id</code> - Delete a comment</li>
+      </ul>
+    </section>
   </body>
 </html>

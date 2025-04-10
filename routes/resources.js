@@ -17,8 +17,13 @@ function saveData(data) {
 // GET all resources
 router.get("/", (req, res) => {
   const data = getData();
+  const authorId = req.query.authorId;
+  let result = data;
+  if (authorId) {
+    result = result.filter((item) => item.authorId == authorId);
+  }
   //maybe add query params for public vs
-  res.json(data);
+  res.json(result);
 });
 
 // GET one resource by ID

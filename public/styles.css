@@ -1,0 +1,28 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  background-color: #f4f4f4;
+}
+h1 {
+  margin-bottom: 1rem;
+}
+section {
+  margin-bottom: 2rem;
+}
+code {
+  background-color: #eaeaea;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+.method {
+  font-weight: bold;
+  margin-top: 1rem;
+  color: #0074d9;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+li {
+  margin-bottom: 0.5rem;
+}

@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 3000;
 // ejs view Engine
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+
 //import middleware
 const logger = require("./utilities/logger");
 const error = require("./utilities/error");
@@ -24,6 +25,11 @@ app.use("/users", usersRoutes);
 //base url
 app.get("/", (req, res) => {
   res.render("index");
+});
+
+//view to sumbit new resource with form
+app.get("/form", (req, res) => {
+  res.render("form");
 });
 
 //error middleware

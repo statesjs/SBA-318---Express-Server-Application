@@ -8,7 +8,7 @@
 
 ```bash
 SBA318
-├── public/             # Static files (CSS, images, etc)
+├── public/             # Static files (CSS, images etc)
 ├── views/              # EJS templates
 ├── routes/
 │   ├── resourceRoutes.js
@@ -18,7 +18,8 @@ SBA318
 │   └── errorHandler.js
 ├── data/
 │   ├── resources.json  # Simulate a database
-│   └── users.json
+│   ├── users.json
+│   └── comments.json
 ├── app.js
 ├── package.json
 └── README.md

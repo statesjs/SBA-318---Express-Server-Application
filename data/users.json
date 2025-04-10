@@ -2,11 +2,16 @@
   {
     "id": 1,
     "username": "Jesse",
-    "email": "jesse@example.com"
+    "email": "jesse@perscholas.com"
   },
   {
     "id": 2,
+    "username": "Tishana",
+    "email": "tishana@perscholas.com"
+  },
+  {
+    "id": 3,
     "username": "Jose",
-    "email": "jose@joseemail.com"
+    "email": "jose@perscholas.com"
   }
 ]

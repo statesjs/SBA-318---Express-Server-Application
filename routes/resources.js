@@ -1,7 +1,7 @@
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
-
+const error = require("../utilities/error");
 const router = express.Router();
 const dataPath = path.join(__dirname, "../data/resources.json");
 
@@ -13,8 +13,6 @@ function getData() {
 function saveData(data) {
   fs.writeFileSync(dataPath, JSON.stringify(data, null, 2));
 }
-//add middleware
-const error = require("../utilities/error");
 
 // GET all resources
 router.get("/", (req, res) => {
@@ -29,7 +27,7 @@ router.get("/:id", (req, res, next) => {
   const found = data.find((item) => item.id == req.params.id);
 
   if (!found) {
-    return next(error(404, "not found"));
+    return next(error(404, "Resource not found"));
   }
   res.json(found);
 });
@@ -51,12 +49,12 @@ router.post("/", (req, res, next) => {
 });
 
 // PATCH update resource by ID
-router.patch("/:id", (req, res) => {
+router.patch("/:id", (req, res, next) => {
   const data = getData();
   const resource = data.find((item) => item.id == req.params.id);
 
   if (!resource) {
-    return res.status(404).send("Resource not found");
+    return next(error(404, "Resource not found"));
   }
   Object.assign(resource, req.body);
   saveData(data);
@@ -64,12 +62,12 @@ router.patch("/:id", (req, res) => {
 });
 
 // DELETE resource by ID
-router.delete("/:id", (req, res) => {
+router.delete("/:id", (req, res, next) => {
   let data = getData();
   const exists = data.some((item) => item.id == req.params.id);
 
   if (!exists) {
-    return res.status(404).send("Resource not found");
+    return next(error(404, "Resource not found"));
   }
   data = data.filter((item) => item.id != req.params.id);
   saveData(data);

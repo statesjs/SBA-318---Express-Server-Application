@@ -19,17 +19,19 @@ app.use(express.static(path.join(__dirname, "public"))); // static CSS/images
 // importing routes
 const resourceRoutes = require("./routes/resources");
 const usersRoutes = require("./routes/users");
+const commentsRoutes = require("./routes/comments");
 //applying routes
 app.use("/resources", resourceRoutes);
 app.use("/users", usersRoutes);
+app.use("/comments", commentsRoutes);
 //base url
 app.get("/", (req, res) => {
   res.render("index");
 });
 
 //view to sumbit new resource with form
-app.get("/form", (req, res) => {
-  res.render("form");
+app.get("/postResource", (req, res) => {
+  res.render("postResource");
 });
 
 //error middleware

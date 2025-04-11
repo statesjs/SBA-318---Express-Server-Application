@@ -19,7 +19,7 @@ SBA318
 │   └── styles.css
 ├── views/      # EJS templates
 │   ├── index.ejs
-│   └── form.ejs
+│   └── postResource.ejs
 ├── routes/
 │   ├── resourceRoutes.js
 │   ├── userRoutes.js

@@ -52,13 +52,15 @@ button {
 .div-con {
   display: flex;
   font-size: 14px;
-  height: 10vh;
+  height: auto;
   background: #f4f4f4;
 }
 
 .navbar {
+  display: flex;
+  justify-content: space-evenly;
   margin: auto;
-  padding: 0.5rem 1.5rem;
+  padding: 1rem 0.5rem;
   background: #f4f4f4;
   border-radius: 1rem;
   box-shadow: 0 0px 12px black;
@@ -72,7 +74,6 @@ button {
 .nav-link,
 .drop-down li {
   list-style: none;
-  height: 100%;
   padding: 0.5rem 1rem;
   font-weight: 600;
   cursor: pointer;

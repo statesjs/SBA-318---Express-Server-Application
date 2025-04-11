@@ -7,11 +7,46 @@
     <title>SBA318: DevLink</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/index.css" />
   </head>
   <body>
+    <div class="div-con">
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li class="nav-link">
+            <a href="http://localhost:3000/">HOME</a>
+          </li>
+          <li class="nav-link services">
+            <a href="">RESOURCES 📚</a>
+            <ul class="drop-down">
+              <li>POST</li>
+              <li>GET</li>
+              <li>PATCH</li>
+              <li>DELETE</li>
+            </ul>
+          </li>
+          <li class="nav-link services">
+            <a href="">USERS 👨🏻‍💻</a>
+            <ul class="drop-down">
+              <li>POST</li>
+              <li>GET</li>
+              <li>PATCH</li>
+              <li>DELETE</li>
+            </ul>
+          </li>
+          <li class="nav-link services">
+            <a href="">COMMENTS 📝</a>
+            <ul class="drop-down">
+              <li>POST</li>
+              <li>GET</li>
+              <li>PATCH</li>
+              <li>DELETE</li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
     <h1>SBA318 API Endpoint Guide</h1>
-
     <section>
       <h2>Users</h2>
       <div class="method">GET</div>
@@ -48,7 +83,7 @@
         <li><code>/resources?authorId=1</code> - Filter resources by authorId</li>
       </ul>
       <div class="method">POST</div>
-      <a href="http://localhost:3000/form">Submit a new resource through this form</a>
+      
       <ul>
         <li><code>/resources</code> - Create a new resource</li>
       

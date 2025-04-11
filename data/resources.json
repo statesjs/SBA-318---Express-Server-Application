@@ -1,9 +1,9 @@
 [
   {
     "id": 1,
-    "title": "REST API Design",
-    "description": "A guide on REST principles and endpoints.",
-    "notes": "Review again before lesson.",
+    "title": "Express Source",
+    "description": "Understanding requests",
+    "notes": "make exercises for students",
     "authorId": 2
   },
   {
@@ -29,30 +29,14 @@
   },
   {
     "id": 5,
-    "title": "test",
-    "description": "test description"
+    "title": "df",
+    "description": "s\r\n",
+    "authorId": "10"
   },
   {
     "id": 6,
-    "title": "test 2",
-    "description": "test2"
-  },
-  {
-    "id": 7,
-    "title": "test 2",
-    "description": "test2",
-    "authorId": 3
-  },
-  {
-    "id": 8,
-    "title": "test 2",
-    "description": "test2",
-    "authorId": 4
-  },
-  {
-    "id": 9,
-    "title": "sdfd",
-    "description": "sdfsdf",
-    "authorId": "22"
+    "title": "df",
+    "description": "s\r\n",
+    "authorId": "10"
   }
 ]

@@ -10,12 +10,21 @@
 
     <form method="POST" action="/resources">
       <label for="title">Title:</label><br />
-      <input type="text" id="title" name="title" required /><br /><br />
+      <input
+        type="text"
+        id="title"
+        name="title"
+        required
+        pattern="^.{3,10}$"
+        title="Title must be 3–10 characters long. Regex added here..."
+      /><br /><br />
       <label for="description">Description:</label><br />
       <textarea
         id="description"
         name="description"
         rows="4"
+        pattern="^.{5,100}$"
+        title="Must be at least 5 character to 100 characters. Regex added here.."
         required
       ></textarea>
 

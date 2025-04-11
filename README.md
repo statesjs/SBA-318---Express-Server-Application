@@ -2,14 +2,14 @@
 
 ## Description
 
-- This application is a standalone Express-based prototype for the backend of DevLink, my full-stack portfolio project. It focuses on data modeling, REST architecture, and server-side rendering using EJS templates. This version uses file-based storage instead of a database and does not include full authentication. It represents the foundational logic powering DevLink’s resource-sharing system.
+- This Express application is a prototype backend of DevLink, my full-stack portfolio project (Capstone 🎉). It focuses on REST architecture, logical routing, and server-side rendering using EJS templates. This version uses file-based storage instead of a database and does not include full authentication, which will be implemented in the final product. Many safety features and practical applications were not applied here in order to make the mock database interactable to test connectivity...and also because I have a busy weekend.
 
 ## Dependencies
 
 - Nodemon
 - Express
 - EJS
-- Joi - for input validation (also used regex in some places)
+- Joi - for input validation (also used regex in the resources route for posting + patching)
 
 ## Folder Structure
 

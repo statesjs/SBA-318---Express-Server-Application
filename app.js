@@ -33,6 +33,10 @@ app.get("/", (req, res) => {
 app.get("/postResource", (req, res) => {
   res.render("postResource");
 });
+//view to post to users
+app.get("/postUser", (req, res) => {
+  res.render("postUser");
+});
 
 //error middleware
 app.use(error);

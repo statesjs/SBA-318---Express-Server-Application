@@ -3,7 +3,7 @@ const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const error = require("../utilities/error");
-
+const Joi = require("joi");
 const router = express.Router();
 const dataPath = path.join(__dirname, "../data/users.json");
 
@@ -14,6 +14,11 @@ function getData() {
 function saveData(data) {
   fs.writeFileSync(dataPath, JSON.stringify(data, null, 2));
 }
+
+const postSchema = Joi.object({
+  username: Joi.string().required().min(5).max(15),
+  email: Joi.string().email(), //built in method to validate email
+});
 
 // GET all users
 router.get("/", (req, res) => {
@@ -34,10 +39,13 @@ router.get("/:id", (req, res, next) => {
 // POST create new user
 router.post("/", (req, res, next) => {
   const users = getData();
-  const { username, email } = req.body;
+  //Joi schema applied here
+  const { error: validationError } = postSchema.validate(req.body, {
+    abortEarly: false,
+  }); //abort early allows all validation error details to be checked before it fails
 
-  if (typeof username !== "string" || typeof email !== "string") {
-    return next(error(400, "Invalid input types"));
+  if (validationError) {
+    return next(error(400, validationError.details[0].message));
   }
 
   const newUser = {

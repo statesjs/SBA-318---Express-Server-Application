@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Create New Resource</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+
+  <body>
+    <div class="div-con">
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li class="nav-link">
+            <a href="http://localhost:3000/">HOME</a>
+          </li>
+          <li class="nav-link services">
+            <a href="">RESOURCES 📚</a>
+            <ul class="drop-down">
+              <li><a href="http://localhost:3000/postResource">POST</a></li>
+              <li><a href="http://localhost:3000/resources">GET</a></li>
+            </ul>
+          </li>
+          <li class="nav-link services">
+            <a href="">USERS 👨🏻‍💻</a>
+            <ul class="drop-down">
+              <li><a href="http://localhost:3000/postUser">POST</a></li>
+              <li><a href="http://localhost:3000/users">GET</a></li>
+            </ul>
+          </li>
+          <li class="nav-link services">
+            <a href="">COMMENTS 📝</a>
+            <ul class="drop-down">
+              <li><a href="http://localhost:3000/comments">GET</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="title">
+      <h1>Create a New User</h1>
+    </div>
+    <div class="form-stuff">
+      <form method="POST" action="/users">
+        <label for="username">Username</label><br />
+        <input
+          type="text"
+          id="username"
+          name="username"
+          required
+          pattern=""
+        /><br /><br />
+        <label for="email">Email</label><br />
+        <textarea
+          id="email"
+          name="email"
+          rows="1"
+          pattern=""
+          required
+        ></textarea>
+
+        <br /><br />
+
+        <button type="submit">Submit User</button>
+      </form>
+    </div>
+  </body>
+</html>

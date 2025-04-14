@@ -3,10 +3,17 @@ body {
   padding: 6rem 2rem 2rem;
   background-color: #f4f4f4;
   margin: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 h1 {
+  display: flex;
   margin-bottom: 1rem;
   color: #333;
+}
+.title {
+  display: flex;
+  justify-content: center;
 }
 section {
   margin-bottom: 2rem;
@@ -31,9 +38,9 @@ li {
 
 form {
   background: white;
-  padding: 2rem;
+  padding: 3rem;
   border-radius: 8px;
-  max-width: 500px;
+  max-width: 800px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -47,13 +54,25 @@ button {
   font-size: 1rem;
 }
 
+.form-stuff {
+  display: flex;
+  justify-content: center;
+}
+
 /*navbar section*/
 
 .div-con {
   display: flex;
   font-size: 14px;
-  height: 10vh;
+
   background: #f4f4f4;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 23px;
 }
 
 .navbar {

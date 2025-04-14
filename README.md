@@ -19,11 +19,12 @@ SBA318
 │   └── styles.css
 ├── views/      # EJS templates
 │   ├── index.ejs
-│   └── postResource.ejs
+│   ├── postResource.ejs
+│   └── postUser.ejs
 ├── routes/
-│   ├── resourceRoutes.js
-│   ├── userRoutes.js
-│   └── userRoutes.js
+│   ├── resources.js
+│   ├── users.js
+│   └── comments.js
 ├── utilities/
 │   ├── logger.js
 │   └── error.js
